@@ -1,3 +1,30 @@
+<script setup lang="ts">
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
+import { useUserStore } from "../../store/user";
+import Button from "./../shared/Button.vue";
+const userStore = useUserStore();
+const { fullname } = storeToRefs(userStore);
+
+const updateState = () => {
+  console.log(userStore);
+  userStore.setFullName("Khalid Sheet");
+};
+
+onMounted(() => {
+  const elements = document.querySelectorAll(".floating");
+  document.addEventListener("scroll", (e) => {
+    const documentTopPosition = document.documentElement.scrollTop;
+    elements.forEach((e) => {
+      const pos = e.clientWidth / 2;
+      e.setAttribute(
+        "style",
+        `top: ${pos - documentTopPosition * 0.5}px !important`
+      );
+    });
+  });
+});
+</script>
 <template>
   <div class="landing">
     <svg xmlns="http://www.w3.org/2000/svg">
@@ -23,6 +50,11 @@
       <div class="text-3xl res mt-6 font-thin text-gray-300">
         Think outside the box.
       </div>
+    </div>
+    <div class="actions z-30 absolute bottom-24">
+      <Button class="accent ml-3" @click="$router.push('projects')"
+        >Explore our Projects</Button
+      >
     </div>
   </div>
 </template>
@@ -92,21 +124,13 @@
 
 @keyframes bounceAndScale {
   0% {
-    transform: rotate(0deg);
     left: 80px;
     top: 200px;
-    filter: blur(15px);
-  }
-
-  50% {
-    transform: rotate(-70deg) scale(1.3);
   }
 
   100% {
-    transform: rotate(70deg) scale(0.5);
-    filter: blur(40px);
-    left: 100px;
-    top: 300px;
+    left: 80px;
+    top: 220px;
   }
 }
 </style>

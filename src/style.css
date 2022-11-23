@@ -13,3 +13,22 @@ body {
   color: #ffffff;
   overflow-x: hidden;
 }
+
+.safe-area {
+  margin-top: 60px;
+}
+
+.router-link-active.router-link-exact-active {
+  border-bottom: 1px solid #fff;
+  animation: popIn 400ms ease-in 0ms 1 forwards;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
