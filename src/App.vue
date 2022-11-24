@@ -24,6 +24,9 @@ onMounted(() => {
     </div>
   </div>
   <router-view></router-view>
+  <div class="footer flex p-6 justify-center">
+    All rights reserved &copy; 2022
+  </div>
 </template>
 <style scoped>
 .header {

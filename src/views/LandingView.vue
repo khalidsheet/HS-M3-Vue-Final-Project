@@ -27,7 +27,7 @@ import DoCard from "../components/shared/DoCard.vue";
     </div>
   </div>
   <Divider />
-  <div class="what-we-do py-36">
+  <div class="what-we-do py-24">
     <SectionTitle>What we do?</SectionTitle>
     <div class="description text-center mb-12 text-gray-400">
       We always like to give our customer the best in field products by
@@ -39,25 +39,28 @@ import DoCard from "../components/shared/DoCard.vue";
         class="flex-1"
         title="Sales Increasing"
         description="You don't need to think about your sales anymore, we will handle all your sales, product by product."
-        image="./../src/assets/salesman-indicating-sales-growth.png"
-      />
+      >
+        <img src="./../assets/salesman-indicating-sales-growth.png" alt="" />
+      </DoCard>
       <DoCard
         class="flex-1"
         title="Mobile Development"
         description="Do you need an application for your business? we got you! start pitching you ideas to us and we will deliver your application as quick as possible."
-        image="./../src/assets/mobile-in-hand.png"
-      />
+      >
+        <img src="./../assets/mobile-in-hand.png" alt="" />
+      </DoCard>
 
       <DoCard
         class="flex-1"
         title="Web Development"
         description="Do you need a website for your business? we got you! Tell what you do and what's your audience and we will do the rest."
-        image="./../src/assets/web-template.png"
-      />
+      >
+        <img src="./../assets/web-template.png" alt="" />
+      </DoCard>
     </div>
   </div>
   <Divider />
-  <div class="what-we-do py-12 bg-white">
+  <div class="what-we-do py-24 bg-white">
     <SectionTitle class="text-gray-900">Our trusted clients</SectionTitle>
     <div class="description text-center mb-12 text-gray-400">
       We support the big compaines to grow more, we even help startups to start
@@ -81,12 +84,12 @@ import DoCard from "../components/shared/DoCard.vue";
 .wireframe {
   left: -40vw;
   top: calc(400px - 50vh);
-  z-index: 54 !important;
+  z-index: -1 !important;
   opacity: 0.14;
   animation-duration: 12000ms;
 }
 .compaines img {
-  max-width: 128px !important;
+  max-width: 64px !important;
   opacity: 0.4;
   cursor: pointer;
   transition: all 100ms ease-in-out;

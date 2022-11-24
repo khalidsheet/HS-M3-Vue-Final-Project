@@ -1,10 +1,10 @@
 <script setup lang="ts">
-defineProps<{ title: string; description: string; image: string }>();
+defineProps<{ title: string; description: string }>();
 </script>
 <template>
   <div class="card w-80">
     <div class="img">
-      <img :src="image" alt="" />
+      <slot />
     </div>
     <div class="title">{{ title }}</div>
     <div class="description text-gray-500 px-5">{{ description }}</div>
