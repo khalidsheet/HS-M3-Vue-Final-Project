@@ -1,20 +1,13 @@
-import {
-  createRouter,
-  createWebHashHistory,
-  createWebHistory,
-  RouteRecordRaw,
-} from "vue-router";
-import LandingView from "../views/LandingView.vue";
-import ProjectsView from "../views/ProjectsView.vue";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
   {
     path: "",
-    component: LandingView,
+    component: () => import("../views/LandingView.vue"),
   },
   {
     path: "/projects",
-    component: ProjectsView,
+    component: () => import("../views/ProjectsView.vue"),
   },
 ];
 
