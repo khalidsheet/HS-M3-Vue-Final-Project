@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import Hero from "../components/landing/Hero.vue";
 import SectionTitle from "../components/shared/SectionTitle.vue";
-import { useProjectsStore } from "../store/user";
-import { storeToRefs } from "pinia";
+import { useProjectsStore } from "../store/projects";
 import ProjectsList from "../components/projects/ProjectsList.vue";
 import { onMounted, ref } from "vue";
 const useProjects = useProjectsStore();

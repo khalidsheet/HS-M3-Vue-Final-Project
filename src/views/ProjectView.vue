@@ -1,22 +1,19 @@
 <script setup lang="ts">
-import Hero from "../components/landing/Hero.vue";
-import SectionTitle from "../components/shared/SectionTitle.vue";
 import { onMounted, ref } from "vue";
-import { useProjectsStore } from "../store/user";
+import { useProjectsStore } from "../store/projects";
 import { Project } from "../shared/interfaces/Project.interface";
-import { useRouter } from "vue-router";
-
 const projectsStore = useProjectsStore();
 const props = defineProps<{ id: string }>();
 const projectDetails = ref<Project>();
-const router = useRouter();
+const API_CALL = "https://637399a8348e947299113d2a.mockapi.io/projects";
 
-onMounted(() => {
+onMounted(async () => {
   projectDetails.value = projectsStore.getSingleProject(props.id);
 
-  // Go back to projects view if the state is undefined
   if (!projectDetails.value) {
-    router.back();
+    projectDetails.value = await (
+      await fetch(`${API_CALL}/${props.id}`)
+    ).json();
   }
 });
 </script>

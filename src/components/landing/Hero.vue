@@ -10,7 +10,7 @@ onMounted(() => {
       const pos = e.clientWidth / 2;
       e.setAttribute(
         "style",
-        `top: ${pos - documentTopPosition * 0.5}px !important`
+        `top: ${pos - documentTopPosition * 0.7}px !important`
       );
     });
   });
@@ -69,7 +69,7 @@ onMounted(() => {
   width: 150px;
   top: 80px;
   left: 200px;
-  animation: bounceAndScale 3000ms ease-in 0ms infinite forwards alternate;
+  animation: floating 3000ms ease-in 0ms infinite forwards alternate;
 }
 
 .floating:nth-child(2) {
@@ -113,7 +113,7 @@ onMounted(() => {
   }
 }
 
-@keyframes bounceAndScale {
+@keyframes floating {
   0% {
     left: 80px;
     top: 200px;

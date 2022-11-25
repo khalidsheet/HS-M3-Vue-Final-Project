@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const props = defineProps<{ project: any }>();
+import { Project } from "../../shared/interfaces/Project.interface";
+
+const props = defineProps<{ project: Project }>();
 </script>
 
 <template>
