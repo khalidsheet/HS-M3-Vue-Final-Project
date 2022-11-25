@@ -1,20 +1,27 @@
 import { defineStore } from "pinia";
+import { Project } from "../shared/interfaces/Project.interface";
 
-export const useUserStore = defineStore("user", {
-  state: () => ({
-    name: "",
-    surname: "",
-  }),
+// local Interface
+interface ProjectsState {
+  projects: Project[];
+}
+
+export const useProjectsStore = defineStore("projects", {
+  state: () =>
+    <ProjectsState>{
+      projects: [],
+    },
   getters: {
-    fullname(state) {
-      return `${state.name} ${state.surname}`;
+    getProjects(state) {
+      return state.projects;
     },
   },
   actions: {
-    setFullName(value: string) {
-      const splitBySpace = value.split(" ");
-      this.name = splitBySpace[0];
-      this.surname = splitBySpace[1];
+    setProjects(projects: Project[]) {
+      this.projects = projects;
+    },
+    getSingleProject(id: string): Project | undefined {
+      return this.projects.find((project) => id === project.id);
     },
   },
 });

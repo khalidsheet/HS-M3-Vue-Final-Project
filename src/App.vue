@@ -16,11 +16,9 @@ onMounted(() => {
 </script>
 <template>
   <div class="header">
-    <div class="links w-1/2 flex justify-between">
+    <div class="links w-1/2 flex justify-around">
       <router-link to="/" ref="about">Home</router-link>
       <router-link to="/projects">Projects</router-link>
-      <router-link to="/our-team">our team</router-link>
-      <router-link to="/contact">contact</router-link>
     </div>
   </div>
   <router-view></router-view>

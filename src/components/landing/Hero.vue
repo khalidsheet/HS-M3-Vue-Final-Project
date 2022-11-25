@@ -1,15 +1,6 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
 import { onMounted } from "vue";
-import { useUserStore } from "../../store/user";
 import Button from "./../shared/Button.vue";
-const userStore = useUserStore();
-const { fullname } = storeToRefs(userStore);
-
-const updateState = () => {
-  console.log(userStore);
-  userStore.setFullName("Khalid Sheet");
-};
 
 onMounted(() => {
   const elements = document.querySelectorAll(".floating");
